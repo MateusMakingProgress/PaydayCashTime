@@ -126,3 +126,4 @@ E:\estudo_mateus\PaydayCashTime\obj\Debug\net8.0\staticwebassets\msbuild.buildMu
 E:\estudo_mateus\PaydayCashTime\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.PaydayCashTime.props
 E:\estudo_mateus\PaydayCashTime\obj\Debug\net8.0\staticwebassets.pack.json
 E:\estudo_mateus\PaydayCashTime\obj\Debug\net8.0\PaydayCashTime.csproj.CopyComplete
+E:\estudo_mateus\PaydayCashTime\obj\Debug\net8.0\PaydayCashTime.sourcelink.json

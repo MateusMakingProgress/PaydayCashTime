@@ -12,11 +12,6 @@ builder.Services.AddDbContext<DataContext>(option =>
 
 var app = builder.Build();
 
-app.MapGet("/", context =>
-{
-    context.Response.Redirect("/swagger");
-    return Task.CompletedTask;
-});
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
