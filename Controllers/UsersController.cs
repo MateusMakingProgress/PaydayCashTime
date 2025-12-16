@@ -14,13 +14,21 @@ namespace PaydayCashTime.Controllers
         {
             _context = context;
         }
+
         [HttpPost]
-        public async Task<ActionResult<List<UsersModel>>> Add(UsersModel users)
+        public async Task<ActionResult<List<UsersModel>>> Add([FromBody] CreateUserRequest usersRequest)
         {
-            _context.Users.Add(users);
+            var newUser = new UsersModel
+            {
+                Id = Guid.NewGuid(),
+                Name = usersRequest.Name,
+                email = usersRequest.Email,
+            };
+            _context.Users.Add(newUser);
             await _context.SaveChangesAsync();
             return Ok(await _context.Users.ToListAsync());
         }
+
         [HttpGet]
         public async Task<ActionResult<List<UsersModel>>> GetAll()
         {

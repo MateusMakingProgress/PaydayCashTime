@@ -9,5 +9,6 @@ namespace PaydayCashTime.Data
         {   }
 
         public DbSet<UsersModel> Users { get; set; }
+        public DbSet<TransactionsModel> Transactions { get; set; }
     }
 }
