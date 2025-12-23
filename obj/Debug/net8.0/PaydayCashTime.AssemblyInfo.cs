@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PaydayCashTime")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a24e0a9007bba3e54f6cbcb9353aa148ed5f9174")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+577df201fa11230da3bf742a41d9bf50f2b7cbad")]
 [assembly: System.Reflection.AssemblyProductAttribute("PaydayCashTime")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PaydayCashTime")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

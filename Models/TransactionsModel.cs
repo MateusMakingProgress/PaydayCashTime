@@ -10,10 +10,17 @@ namespace PaydayCashTime.Models
         public string? Description { get; set; }
         public decimal? TransactionValue { get; set; }
         public PayMethod? PayMethod { get; set; }
+        public TransactionType ExitJoin { get; set; }
         public bool HaveInstallments { get; set; }
         public int? TotalInstallments { get; set; }
         public string? WhoDid { get; set; }
 
+    }
+
+    public enum TransactionType
+    {
+        Income = 1,
+        Expense = 2
     }
 
     public enum PayMethod
@@ -35,6 +42,8 @@ namespace PaydayCashTime.Models
         [Required]
         public PayMethod? PayMethod { get; set; }
         [Required]
+        public TransactionType ExitJoin { get; set; }
+        [Required]
         public bool HaveInstallments { get; set; }
         [Required]
         public int? TotalInstallments { get; set; }
@@ -48,11 +57,9 @@ namespace PaydayCashTime.Models
         public string? Description { get; set; }
         public decimal? TransactionValue { get; set; }
         public PayMethod? PayMethod { get; set; }
+        public TransactionType ExitJoin { get; set; }
         public bool HaveInstallments { get; set; }
         public int? TotalInstallments { get; set; }
         public string? WhoDid { get; set; }
-
     }
-
-
 }

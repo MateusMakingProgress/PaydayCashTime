@@ -26,6 +26,7 @@ namespace PaydayCashTime.Controllers
                 Description = transactionsRequest.Description,
                 TransactionValue = transactionsRequest.TransactionValue,
                 PayMethod = transactionsRequest.PayMethod,
+                ExitJoin = transactionsRequest.ExitJoin,
                 HaveInstallments = transactionsRequest.HaveInstallments,
                 TotalInstallments = transactionsRequest.TotalInstallments,
                 WhoDid = transactionsRequest.WhoDid,

@@ -121,6 +121,13 @@ E:\estudo_mateus\PaydayCashTime\obj\Debug\net8.0\PaydayCashTime.pdb
 E:\estudo_mateus\PaydayCashTime\obj\Debug\net8.0\PaydayCashTime.genruntimeconfig.cache
 E:\estudo_mateus\PaydayCashTime\obj\Debug\net8.0\ref\PaydayCashTime.dll
 E:\estudo_mateus\PaydayCashTime\obj\Debug\net8.0\PaydayCashTime.sourcelink.json
+E:\estudo_mateus\PaydayCashTime\bin\Debug\net8.0\ClienteApp\angular.json
+E:\estudo_mateus\PaydayCashTime\bin\Debug\net8.0\ClienteApp\package-lock.json
+E:\estudo_mateus\PaydayCashTime\bin\Debug\net8.0\ClienteApp\package.json
+E:\estudo_mateus\PaydayCashTime\bin\Debug\net8.0\ClienteApp\src\proxy.conf.json
+E:\estudo_mateus\PaydayCashTime\bin\Debug\net8.0\ClienteApp\tsconfig.app.json
+E:\estudo_mateus\PaydayCashTime\bin\Debug\net8.0\ClienteApp\tsconfig.json
+E:\estudo_mateus\PaydayCashTime\bin\Debug\net8.0\ClienteApp\tsconfig.spec.json
 E:\estudo_mateus\PaydayCashTime\obj\Debug\net8.0\staticwebassets\msbuild.PaydayCashTime.Microsoft.AspNetCore.StaticWebAssets.props
 E:\estudo_mateus\PaydayCashTime\obj\Debug\net8.0\staticwebassets\msbuild.build.PaydayCashTime.props
 E:\estudo_mateus\PaydayCashTime\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.PaydayCashTime.props

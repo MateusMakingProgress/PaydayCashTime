@@ -26,6 +26,9 @@ namespace PaydayCashTime.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("ExitJoin")
+                        .HasColumnType("INTEGER");
+
                     b.Property<bool>("HaveInstallments")
                         .HasColumnType("INTEGER");
 

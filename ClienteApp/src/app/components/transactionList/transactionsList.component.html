@@ -1,0 +1,72 @@
+<div class="container">
+  <h1>Nova Transação</h1>
+
+  <section class="form-cadastro">
+    <div class="input-group">
+      <label>Nome:</label>
+      <input [(ngModel)]="newTransaction.whoDid" placeholder="Quem fez?" />
+    </div>
+
+    <div class="input-group">
+      <label>Descrição:</label>
+      <input [(ngModel)]="newTransaction.description" placeholder="Descrição" />
+    </div>
+
+    <div class="input-group">
+      <label>Tipo Movimentação:</label>
+      <select [(ngModel)]="newTransaction.exitJoin">
+        <option [ngValue]="1">Entrada (+)</option>
+        <option [ngValue]="2">Saída (-)</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label>Valor:</label>
+      <input [(ngModel)]="newTransaction.transactionValue" type="number" placeholder="Valor" />
+    </div>
+
+    <div class="input-group">
+      <label>Data Transfêrencia:</label>
+      <input [(ngModel)]="newTransaction.transactionDate" type="datetime-local" placeholder="Data" />
+    </div>
+
+    <div class="input-group">
+      <label>Método de Pagamento:</label>
+      <select [(ngModel)]="newTransaction.payMethod">
+        <option [ngValue]="1">Dinheiro</option>
+        <option [ngValue]="2">Débito</option>
+        <option [ngValue]="3">Crédito</option>
+        <option [ngValue]="4">Transfêrencia</option>
+      </select>
+    </div>
+
+    <div class="input-group checkbox-group">
+      <label>Parcelado?</label>
+      <input type="checkbox" [(ngModel)]="newTransaction.haveInstallments" />
+    </div>
+
+    <div class="input-group" *ngIf="newTransaction.haveInstallments">
+      <label>Total de Parcelas:</label>
+      <input [(ngModel)]="newTransaction.totalInstallments" type="number" min="1" />
+    </div>
+
+    <button class="btn-save" (click)="save()">Adicionar Transação</button>
+  </section>
+
+  <hr>
+
+  <h1>Minhas Transações</h1>
+  <div class="lista-transacoes">
+    <div class="card-transacao" *ngFor="let item of transactions"
+         [ngClass]="item.exitJoin === 1 ? 'card-entrada' : 'card-saida'">
+      <span class="info-who">{{ item.whoDid }}</span>
+      <span class="info-desc">{{ item.description }}</span>
+      <span class="info-val">{{ item.exitJoin === 2 ? '-' : '+' }} {{ item.transactionValue | currency: 'BRL' }}</span>
+      <span class="info-method">{{ paymentMethods[item.payMethod] || 'N/A' }}</span>
+      <span class="info-date">{{ item.transactionDate | date: 'dd/MM/yyyy' }}</span>
+      <span class="info-status" [class.parcelado]="item.haveInstallments">
+        {{ item.haveInstallments ? 'Parcelado (' + item.totalInstallments + 'x)' : 'À vista' }}
+      </span>
+    </div>
+  </div>
+</div>
