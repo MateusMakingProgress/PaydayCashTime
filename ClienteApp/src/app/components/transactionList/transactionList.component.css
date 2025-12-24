@@ -73,6 +73,31 @@
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
+.dashboard-resumo {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.card-resumo {
+    flex: 1;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card-resumo span { font-size: 0.85rem; opacity: 0.8; }
+.card-resumo strong { font-size: 1.4rem; margin-top: 5px; }
+
+.entrada { background-color: #28a745 !important; }
+.saida { background-color: #dc3545 !important; }
+.positivo { background-color: #007bff !important; }
+.negativo { background-color: #6c757d !important; }
+
 .card-entrada {
     border-top-color: #28a745 !important;
     background-color: #f6fff8;
@@ -87,9 +112,9 @@
   background-color: #fffafb;
 }
 
-  .card-saida .info-val {
-    color: #dc3545;
-  }
+.card-saida .info-val {
+  color: #dc3545;
+}
 
 .card-transacao:hover {
     transform: translateY(-5px);

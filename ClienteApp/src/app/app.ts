@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal, computed } from '@angular/core';
 import { TransactionsService } from './services/transactions';
 import { TransactionsModel } from './models/transactions.model';
 import { CommonModule } from '@angular/common';
@@ -12,7 +12,22 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['/components/transactionList/transactionList.component.css']
 })
 export class App implements OnInit {
-  transactions: TransactionsModel[] = [];
+
+  transactions = signal<TransactionsModel[]>([]);
+
+  totalExits = computed(() => {
+    return this.transactions()
+      .filter(t => t.exitJoin == 2)
+      .reduce((sum, item) => sum + (item.transactionValue || 0), 0);
+  });
+
+  totalJoins = computed(() => {
+    return this.transactions()
+      .filter(t => t.exitJoin == 1)
+      .reduce((sum, item) => sum + (item.transactionValue || 0), 0);
+  });
+
+  totalBalance = computed(() => this.totalJoins() - this.totalExits());
 
   paymentMethods: { [key: number]: string } = {
     1: 'Dinheiro',
@@ -41,9 +56,10 @@ export class App implements OnInit {
 
   loadTransactions() {
     this.transactionsService.getTransactions().subscribe(data => {
-      this.transactions = data.sort((a, b) => {
-        return new Date(b.transactionDate).getTime() - new Date(a.transactionDate).getTime();
-      });
+      const sortedData = data.sort((a, b) => 
+        new Date(b.transactionDate).getTime() - new Date(a.transactionDate).getTime()
+      );
+      this.transactions.set(sortedData);
     });
   }
 
