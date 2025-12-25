@@ -37,6 +37,39 @@
     width: 60px;
 }
 
+.busca-container .input-group {
+    width: 100%;
+}
+
+.search-container {
+    margin: 20px 0;
+    width: 100%;
+}
+
+.search-input {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #dee2e6;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.search-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.1);
+}
+
+.busca-container {
+    margin: 20px 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+}
+
 .btn-save {
     background-color: #28a745;
     color: white;
@@ -60,6 +93,7 @@
 }
 
 .card-transacao {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 200px;
@@ -71,6 +105,25 @@
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
   transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-delete {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    color: #dc3545;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.btn-delete:hover {
+    opacity: 1;
+    transform: scale(1.2);
 }
 
 .dashboard-resumo {

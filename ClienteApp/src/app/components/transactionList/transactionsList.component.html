@@ -4,17 +4,17 @@
   <section class="form-cadastro">
     <div class="input-group">
       <label>Nome:</label>
-      <input [(ngModel)]="newTransaction.whoDid" placeholder="Quem fez?" />
+      <input [(ngModel)]="transactionsService.newTransaction.whoDid" placeholder="Quem fez?" />
     </div>
 
     <div class="input-group">
       <label>Descrição:</label>
-      <input [(ngModel)]="newTransaction.description" placeholder="Descrição" />
+      <input [(ngModel)]="transactionsService.newTransaction.description" placeholder="Descrição" />
     </div>
 
     <div class="input-group">
       <label>Tipo Movimentação:</label>
-      <select [(ngModel)]="newTransaction.exitJoin">
+      <select [(ngModel)]="transactionsService.newTransaction.exitJoin">
         <option [ngValue]="1">Entrada (+)</option>
         <option [ngValue]="2">Saída (-)</option>
       </select>
@@ -22,17 +22,17 @@
 
     <div class="input-group">
       <label>Valor:</label>
-      <input [(ngModel)]="newTransaction.transactionValue" type="number" placeholder="Valor" />
+      <input [(ngModel)]="transactionsService.newTransaction.transactionValue" type="number" placeholder="Valor" />
     </div>
 
     <div class="input-group">
       <label>Data Transfêrencia:</label>
-      <input [(ngModel)]="newTransaction.transactionDate" type="datetime-local" placeholder="Data" />
+      <input [(ngModel)]="transactionsService.newTransaction.transactionDate" type="datetime-local" placeholder="Data" />
     </div>
 
     <div class="input-group">
       <label>Método de Pagamento:</label>
-      <select [(ngModel)]="newTransaction.payMethod">
+      <select [(ngModel)]="transactionsService.newTransaction.payMethod">
         <option [ngValue]="1">Dinheiro</option>
         <option [ngValue]="2">Débito</option>
         <option [ngValue]="3">Crédito</option>
@@ -42,12 +42,12 @@
 
     <div class="input-group checkbox-group">
       <label>Parcelado?</label>
-      <input type="checkbox" [(ngModel)]="newTransaction.haveInstallments" />
+      <input type="checkbox" [(ngModel)]="transactionsService.newTransaction.haveInstallments" />
     </div>
 
-    <div class="input-group" *ngIf="newTransaction.haveInstallments">
+    <div class="input-group" *ngIf="transactionsService.newTransaction.haveInstallments">
       <label>Total de Parcelas:</label>
-      <input [(ngModel)]="newTransaction.totalInstallments" type="number" min="1" />
+      <input [(ngModel)]="transactionsService.newTransaction.totalInstallments" type="number" min="1" />
     </div>
 
     <button class="btn-save" (click)="save()">Adicionar Transação</button>
@@ -75,9 +75,20 @@
   </div>
 
   <h1>Minhas Transações</h1>
+
+  <section class="busca-container">
+    <div class="search-container">
+      <label>Pesquisar Transações:</label>
+      <input class="search-input" type="text" placeholder="Pesquisar por nome ou descrição..." (input)="updateSearch($event)" />
+    </div>
+  </section>
+  
   <div class="lista-transacoes">
-    <div class="card-transacao" *ngFor="let item of transactions()"
+    <div class="card-transacao" *ngFor="let item of filteredTransactions()"
          [ngClass]="item.exitJoin === 1 ? 'card-entrada' : 'card-saida'">
+
+      <button class="btn-delete" (click)="remove(item.id)">🗑️</button>
+
       <span class="info-who">{{ item.whoDid }}</span>
       <span class="info-desc">{{ item.description }}</span>
       <span class="info-val">{{ item.exitJoin === 2 ? '-' : '+' }} {{ item.transactionValue | currency: 'BRL' }}</span>

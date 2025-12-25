@@ -21,8 +21,10 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputPath": "dist/cliente-app",
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
+            "index": "src/index.html",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
